@@ -22,7 +22,9 @@ Route::get('ogrenciekle', function () {
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
 Route::post('kayit', [UserController::class, 'register']);
 Route::post('logout', [UserController::class, 'logout']);
 Route::post('login', [UserController::class, 'login']);
