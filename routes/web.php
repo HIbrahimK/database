@@ -38,3 +38,8 @@ Route::get('delete',[\App\Http\Controllers\KullaniciController::class,'delete'])
 Route::get('fdelete',[\App\Http\Controllers\KullaniciController::class,'fdelete']);
 
 //Route::get('form',[\App\Http\Controllers\KullaniciController::class,'form']);
+
+Route::get('students', function () {
+    return view('students');
+})->name('students');
+Route::get('listele',[\App\Http\Controllers\StudentController::class,'listele']);
