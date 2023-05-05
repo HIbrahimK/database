@@ -8,8 +8,10 @@
 
     </head>
     <body>
-      @livewire('hello-world')
+      @livewire('hello-world',['name'=>'Chico'])
 
+      <hr>
+      @livewire('say-hi', ['name'=>$name])
       @livewireScripts
     </body>
 </html>

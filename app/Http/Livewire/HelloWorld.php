@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire;
+use Illuminate\Http\Request;
 
 use Livewire\Component;
 
@@ -14,13 +15,14 @@ class HelloWorld extends Component
     {
         return view('livewire.hello-world');
     }
-    public function resetName()
-    {
-        $this->name='Chico';
+
+    public function mount(Request $request, $name){
+        //İlk yüklemede çalışacak fonksiyon
+        $this->name=$request->input('name', $name);
     }
-    public function buyuk()
+    public function updatedName()
     {
-        $this->name=strtoupper($this->name);
+        $this->name=mb_strtoupper($this->name,'UTF-8');
     }
 
 

@@ -22,6 +22,9 @@ Route::get('ogrenciekle', function () {
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+Route::get('/kayit',\App\Http\Livewire\auth\Register::class);
+
 Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
